@@ -21,7 +21,15 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: "main"
           GITHUB_TOKEN: ${{ secrets.SIGNIN_TOKEN }}
+          
+      - name: Set job1 status
+        id: job1_status
+        run: |
+          echo "::set-output name=success::true"
+          
   build:
+    needs: run-lint
+    if: ${{ needs.job1.outputs.success == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
