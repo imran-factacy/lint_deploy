@@ -19,10 +19,10 @@ jobs:
         uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: "main"
+          DEFAULT_BRANCH: "master"
           GITHUB_TOKEN: ${{ secrets.SIGNIN_TOKEN }}
           
-      - name: Set job1 status
+      - name: Set job1:run-lint status
         id: job1_status
         run: |
           echo "::set-output name=success::true"
