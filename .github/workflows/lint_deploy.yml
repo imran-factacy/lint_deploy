@@ -41,4 +41,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: imranfactacy/test:new
+          tags: imranfactacy/test:Hello
